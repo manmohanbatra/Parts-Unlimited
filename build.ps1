@@ -29,6 +29,7 @@ Write-Host "$testDir"
 # Publish
 $publishDirectory = Join-Path $BuildStagingDirectory "Publish"
 $outputDirectory = Join-Path $publishDirectory "PartsUnlimited"
+New-Item -Path $outputDirectory -ItemType Directory
 & dotnet publish $webSite --framework netcoreapp2.2 --output $outputDirectory --configuration $BuildConfiguration
 
 # Package to MSDeploy format
